@@ -1,0 +1,1666 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SodaStream</title>
+  <style>
+    @font-face {
+      font-family: 'Black';
+      src: url('./fonts/empikProV-Black.woff2') format('woff2');
+    }
+
+    @font-face {
+      font-family: 'Bold';
+      src: url('./fonts/empikProV-Bold.woff2') format('woff2');
+    }
+
+    @font-face {
+      font-family: 'Regular';
+      src: url('./fonts/empikProV-Regular.woff2') format('woff2');
+    }
+
+    @keyframes es-move {
+      0% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes es-rotate {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(180deg);
+      }
+    }
+
+    #es-sodastream.es-sodastream p {
+      line-height: inherit !important;
+      color: #13294b !important;
+    }
+
+    #es-sodastream.es-sodastream {
+      font-family: empik, 'Regular', sans-serif;
+      font-size: 25px;
+      line-height: 1.2;
+      max-width: 830px;
+      margin: 0 auto;
+      padding: 0;
+      color: #13294b !important;
+    }
+
+    #es-sodastream.es-sodastream img {
+      max-width: 100%;
+    }
+
+    #es-sodastream.es-sodastream .es-kv {
+      background-color: #ebe6e1;
+      background-image: none;
+      padding: 20px;
+      min-height: 250px;
+      margin-bottom: 0;
+      padding-bottom: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    #es-sodastream.es-sodastream .es-kv__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    #es-sodastream.es-sodastream .es-kv__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      margin-top: 30px;
+    }
+
+    #es-sodastream.es-sodastream .es-kv__contentText {
+      text-align: center;
+      background-color: #ebe6e1;
+    }
+
+    #es-sodastream.es-sodastream .es-kv__bg {
+      display: block;
+      font-family: empik, 'Black', sans-serif;
+      font-weight: 900;
+      color: #e5dcd3 !important;
+      font-size: 60px;
+      margin: 0;
+      text-align: center;
+    }
+
+    #es-sodastream.es-sodastream .es-kv__title {
+      text-transform: uppercase;
+      font-family: empik, 'Black', sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 1.2;
+      margin-bottom: 0;
+    }
+
+    #es-sodastream.es-sodastream .es-kv__subtitle {
+      text-transform: uppercase;
+      line-height: 1.2;
+      font-size: 20px;
+    }
+
+    #es-sodastream.es-sodastream .es-kv__logo {
+      width: 229px;
+    }
+
+    #es-sodastream.es-sodastream .es-kv__img {
+      max-width: 300px;
+      min-width: 120px;
+      margin: 0 auto;
+    }
+
+    #es-sodastream.es-sodastream .es-kv__packshot {
+      max-height: 450px;
+      height: auto;
+      margin-bottom: 0px;
+      margin-left: 0px;
+    }
+
+    #es-sodastream.es-sodastream .es-dis {
+      background-color: #ebe6e1;
+      padding: 40px 10px;
+      padding-top: 1px;
+    }
+
+    #es-sodastream.es-sodastream .es-possibilities {
+      background-color: #ebe6e1;
+      background-image: url(./img/posibilites.png);
+      background-position: 50% 165px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 20px;
+      min-height: 660px;
+    }
+
+    #es-sodastream.es-sodastream .es-possibilities__title {
+      text-transform: uppercase;
+      font-family: empik, 'Black', sans-serif;
+      font-weight: 900;
+      font-size: 20px;
+      margin: 0;
+      text-align: center;
+    }
+
+    #es-sodastream.es-sodastream .es-efficiency {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #13294b !important;
+      padding: 40px 10px;
+    }
+
+    #es-sodastream.es-sodastream .es-efficiency__title {
+      text-transform: uppercase;
+      font-family: empik, 'Black', sans-serif;
+      font-weight: 900;
+      font-size: 20px;
+      margin: 0;
+      padding-top: 10px;
+      text-align: center;
+      color: #eeeae5 !important;
+    }
+
+    #es-sodastream.es-sodastream .es-efficiency__img {
+      margin: 30px 0;
+    }
+
+    #es-sodastream.es-sodastream .es-efficiency__desc {
+      font-size: 16px;
+      margin: 20px auto;
+      width: 87%;
+      text-align: center;
+      color: #eeeae5 !important;
+    }
+
+    #es-sodastream.es-sodastream .es-steps {
+      background-color: #ebe6e1;
+      padding-top: 200px;
+      padding-bottom: 0;
+      margin-top: -250px;
+    }
+
+    #es-sodastream.es-sodastream .es-steps__items {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: column;
+      gap: 10px;
+      padding-top: 50px;
+    }
+
+    #es-sodastream.es-sodastream .es-steps__single {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #es-sodastream.es-sodastream .es-steps__title--2 {
+      z-index: 2;
+    }
+
+    #es-sodastream.es-sodastream .es-steps__title {
+      font-family: empik, 'Black', sans-serif;
+      font-weight: 900;
+      font-size: 36px;
+      text-align: center;
+      color: #13294b !important;
+      z-index: 2;
+    }
+
+    #es-sodastream.es-sodastream .es-steps__img {
+      z-index: 1;
+    }
+
+    #es-sodastream.es-sodastream .es-dis__text {
+      margin: 20px auto;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    #es-sodastream.es-sodastream .es-dis__claim {
+      text-align: center;
+      font-size: 16px;
+      max-width: 80%;
+      margin: 20px auto;
+    }
+
+    #es-sodastream.es-sodastream .es-set {
+      background-color: #ebe6e1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 30px;
+    }
+
+    #es-sodastream.es-sodastream .es-set__img {
+      max-width: 300px;
+      margin-top: -175px;
+    }
+
+    #es-sodastream.es-sodastream .es-set__title {
+      font-family: empik, 'Regular', sans-serif;
+      font-weight: 700;
+      font-size: 25px;
+      margin: 0;
+      padding-top: 70px;
+      text-align: center;
+      color: #13294b !important;
+    }
+
+    #es-sodastream.es-sodastream .es-set__desc {
+      font-size: 16px;
+      margin: 20px auto;
+      width: 88%;
+      color: #13294b !important;
+      text-align: center;
+    }
+
+    #es-sodastream.es-sodastream .es-set__group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-left: 20px;
+      padding-right: 20px;
+      gap: 20px;
+    }
+
+    #es-sodastream.es-sodastream .es-set__group-left,
+    #es-sodastream.es-sodastream .es-set__group-right {
+      font-size: 16px;
+      color: #13294b !important;
+    }
+
+    #es-sodastream.es-sodastream .es-set__group-left-title,
+    #es-sodastream.es-sodastream .es-set__group-right-title {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-size: 16px;
+      font-weight: bold;
+      color: #13294b !important;
+      text-transform: uppercase;
+    }
+
+    #es-sodastream.es-sodastream .es-slider__ctn {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      max-width: 400px;
+    }
+
+    #es-sodastream.es-sodastream .es-slider__single {
+      min-width: 150px;
+      max-width: 150px;
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      text-align: center;
+    }
+
+    #es-sodastream.es-sodastream .es-slider__number {
+      font-family: empik, 'Regular', sans-serif;
+      font-weight: 900;
+      color: #13294b !important;
+      font-size: 40px;
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+
+    #es-sodastream.es-sodastream .es-slider__img {
+      margin: 0px;
+    }
+
+    #es-sodastream.es-sodastream .es-slider__icon {
+      width: 60px;
+    }
+
+    #es-sodastream.es-sodastream .es-slider__desc {
+      color: #13294b !important;
+      font-size: 14px;
+    }
+
+    #es-sodastream.es-sodastream .es-slider__desc span {
+      font-family: empik, 'Black', sans-serif;
+      font-weight: 900;
+    }
+
+    #es-sodastream.es-sodastream .es-cta {
+      background-color: #75a7ad;
+    }
+
+    #es-sodastream.es-sodastream .es-cta__ctn {
+      max-width: 350px;
+      margin: 0 auto;
+      position: relative;
+      margin-bottom: -50px;
+    }
+
+    #es-sodastream.es-sodastream .es-cta__btn {
+      background-color: #75a7ad;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      position: absolute;
+      bottom: -20px;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      padding: 5px;
+      box-shadow: 0px 8px 37px -10px rgb(19, 41, 75);
+      animation: es-move 2s infinite;
+      cursor: pointer;
+    }
+
+    #es-sodastream.es-sodastream .es-cta__btn img {
+      width: 25px;
+    }
+
+    #es-sodastream.es-sodastream .es-rotate {
+      animation: es-rotate 1s forwards;
+    }
+
+    #es-sodastream.es-sodastream .es-toggle {
+      display: none;
+    }
+
+    #es-sodastream.es-sodastream .es-ctaInfo {
+      background-color: #13294b !important;
+      padding: 40px 0;
+      overflow: hidden;
+    }
+
+    #es-sodastream.es-sodastream .es-ctaInfo__title {
+      text-align: center;
+      color: #eeeae5 !important;
+      font-family: empik, 'Regular', sans-serif;
+      font-weight: 700;
+      font-size: 25px;
+      margin: 0;
+      padding: 40px 10px;
+    }
+
+    #es-sodastream.es-sodastream .es-ctaInfo__main {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #es-sodastream.es-sodastream .es-ctaInfo__line {
+      width: 1px;
+      height: 400px;
+      background-color: #75a7ad;
+      margin: 0 20px;
+      display: none;
+    }
+
+    #es-sodastream.es-sodastream .es-ctaInfo__single {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 20px;
+      max-width: 320px;
+      min-width: 300px;
+    }
+
+    #es-sodastream.es-sodastream .es-ctaInfo__desc {
+      text-align: center;
+      font-size: 20px;
+    }
+
+    #es-sodastream.es-sodastream .es-ctaInfo__text {
+      text-align: center;
+      font-size: 25px;
+      color: #75a7ad;
+      font-family: empik, 'Regular', sans-serif;
+      font-weight: 700;
+    }
+
+    #es-sodastream.es-sodastream .es-slider {
+      background-color: #ebe6e1;
+      min-height: 500px;
+      padding-bottom: 150px;
+    }
+
+    #es-sodastream.es-sodastream .es-slider__title {
+      text-align: center;
+      color: #13294b !important;
+      font-family: empik, 'Black', sans-serif;
+      font-weight: 900;
+      font-size: 20px;
+      margin: 0;
+      margin-top: -10px;
+      padding: 40px 10px;
+      line-height: 1.2;
+    }
+
+    #es-sodastream.es-sodastream .es-slider__title span {
+      font-size: 35px;
+    }
+
+    #es-sodastream.es-sodastream .es-slider__slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-height: 850px;
+    }
+
+    #es-sodastream.es-sodastream .es-slider__slide--blue {
+      background-color: #13294b !important;
+    }
+
+    #es-sodastream.es-sodastream .es-slider__content {
+      position: relative;
+    }
+
+    #es-sodastream.es-sodastream .es-slider__imgCtn {
+      display: none;
+    }
+
+    #es-sodastream.es-sodastream .es-slider__subtitle {
+      font-size: 20px;
+      font-family: empik, 'Black', sans-serif;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    #es-sodastream.es-sodastream .es-slider__texts {
+      text-align: center;
+      padding: 10px;
+      position: relative;
+      margin: 0 auto;
+      width: 80%;
+    }
+
+    #es-sodastream.es-sodastream .es-slider__text {
+      font-size: 18px;
+    }
+
+    #es-sodastream.es-sodastream .es-slider__claim {
+      font-size: 12px;
+      text-align: center;
+    }
+
+    #es-sodastream.es-sodastream #es-sodastream.es-sodastream .es-slider .swiper-button-prev:after,
+    #es-sodastream.es-sodastream #es-sodastream.es-sodastream .es-slider .swiper-container-rtl .swiper-button-next:after {
+      display: none;
+    }
+
+    #es-sodastream.es-sodastream #es-sodastream.es-sodastream .es-slider .swiper-button-next:after,
+    #es-sodastream.es-sodastream #es-sodastream.es-sodastream .es-slider .swiper-container-rtl .swiper-button-prev:after {
+      display: none;
+    }
+
+    #es-sodastream.es-sodastream #es-sodastream.es-sodastream .es-slider .swiper-button-next,
+    #es-sodastream.es-sodastream #es-sodastream.es-sodastream .es-slider .swiper-container-rtl .swiper-button-prev {
+      right: -12px;
+      left: auto;
+    }
+
+    #es-sodastream.es-sodastream #es-sodastream.es-sodastream .es-slider .swiper-button-prev,
+    #es-sodastream.es-sodastream #es-sodastream.es-sodastream .es-slider .swiper-container-rtl .swiper-button-next {
+      left: -12px;
+      right: auto;
+    }
+
+    #es-sodastream.es-sodastream #es-sodastream.es-sodastream .es-slider .swiper-container-horizontal>.swiper-pagination-bullets,
+    #es-sodastream.es-sodastream #es-sodastream.es-sodastream .es-slider .swiper-pagination-custom,
+    #es-sodastream.es-sodastream #es-sodastream.es-sodastream .es-slider .swiper-pagination-fraction {
+      bottom: 0px;
+    }
+
+    #es-sodastream.es-sodastream #es-sodastream.es-sodastream .es-slider .swiper-pagination {
+      position: absolute;
+      bottom: -32px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      display: none;
+    }
+
+    #es-sodastream.es-sodastream .swiper-button-prev {
+      height: 25px;
+      width: 25px;
+      top: 50%;
+    }
+
+    #es-sodastream.es-sodastream .swiper-button-next {
+      height: 25px;
+      width: 25px;
+      top: 50%;
+    }
+
+    #es-sodastream.es-sodastream .swiper-button-next:after,
+    #es-sodastream.es-sodastream .swiper-button-prev:after {
+      display: none;
+    }
+
+    #es-sodastream.es-sodastream #es-sodastream.es-sodastream .swiper-horizontal>.swiper-pagination-bullets,
+    #es-sodastream.es-sodastream .swiper-pagination-bullets.swiper-pagination-horizontal,
+    #es-sodastream.es-sodastream .swiper-pagination-custom,
+    #es-sodastream.es-sodastream .swiper-pagination-fraction {
+      display: none;
+    }
+
+    #es-sodastream.es-sodastream #es-sodastream.es-sodastream .es-slider .swiper-pagination-bullet {
+      width: 12px;
+      height: 12px;
+      display: inline-block;
+      border-radius: 50%;
+      background: #fff;
+      border: 1px solid #1d1d1b;
+      opacity: 1;
+    }
+
+    #es-sodastream.es-sodastream #es-sodastream.es-sodastream .es-slider .swiper-pagination-bullet:not(:last-child) {
+      margin-right: 6px;
+    }
+
+    #es-sodastream.es-sodastream #es-sodastream.es-sodastream .es-slider .swiper-pagination-bullet-active {
+      opacity: 1;
+      background: #1d1d1b;
+    }
+
+    #es-sodastream.es-sodastream .es-syroups {
+      padding-bottom: 75px;
+      background-color: #13294b !important;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #es-sodastream.es-sodastream .es-syroups__imgCtn {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #es-sodastream.es-sodastream .es-syroups__pack {
+      max-width: 350px;
+      margin: 0 auto;
+      display: block;
+    }
+
+    #es-sodastream.es-sodastream .es-syroups__img {
+      max-width: 350px;
+      margin: 0 auto;
+      display: block;
+      margin-top: -100px;
+    }
+
+    #es-sodastream.es-sodastream .es-syroups__title {
+      text-align: center;
+      color: #eeeae5 !important;
+      font-family: empik, 'Black', sans-serif;
+      font-weight: 900;
+      font-size: 20px;
+      margin: 0;
+      padding: 20px 10px;
+      line-height: 1.2;
+    }
+
+    #es-sodastream.es-sodastream .es-syroups__desc {
+      text-align: center;
+      font-size: 16px;
+      width: 87%;
+      margin: 20px 0;
+      margin-bottom: 50px;
+      color: #eeeae5 !important;
+    }
+
+    #es-sodastream.es-sodastream .es-syroups__pack {
+      display: block;
+      max-width: 90%;
+      width: 100%;
+    }
+
+    #es-sodastream.es-sodastream .es-video {
+      background-color: #ebe6e1;
+      padding: 40px 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #es-sodastream.es-sodastream .es-video__title {
+      text-align: center;
+      color: #13294b !important;
+      font-family: empik, 'Black', sans-serif;
+      font-weight: 900;
+      font-size: 20px;
+      margin: 0;
+      padding: 20px 10px;
+      padding-top: 0;
+      line-height: 1.2;
+    }
+
+    #es-sodastream.es-sodastream .es-video__iframe {
+      width: 90%;
+      min-height: 450px;
+      z-index: 1;
+      margin: 0 auto;
+    }
+
+    #es-sodastream.es-sodastream .es-video__hash {
+      text-align: center;
+      font-family: empik, 'Regular', sans-serif;
+      font-weight: 900;
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    #es-sodastream.es-sodastream .es-video__logo {
+      max-width: 200px;
+      margin: 0 auto;
+      display: block;
+    }
+
+    #es-sodastream.es-sodastream .es-possibilities {
+      margin-top: -50px;
+    }
+
+    #es-sodastream.es-sodastream .es-possibilities__title {
+      margin-top: 50px;
+    }
+
+    @media (min-width: 1250px) {
+      #es-sodastream.es-sodastream .es-kv {
+        background-color: #ebe6e1;
+        /* background-image: url(./img/kv-bg.png); */
+        position: relative;
+        background-position: 0% 20%;
+        background-repeat: no-repeat;
+        padding: 20px;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+
+      #es-sodastream.es-sodastream .es-kv__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+
+      #es-sodastream.es-sodastream .es-kv__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+      }
+
+      /* #es-sodastream.es-sodastream .es-kv__bg {
+        display: none;
+      } */
+
+      #es-sodastream.es-sodastream .es-kv__title {
+        text-transform: uppercase;
+        font-family: empik, 'Black', sans-serif;
+        font-weight: 900;
+        font-size: 36px;
+        line-height: 1.2;
+      }
+
+      #es-sodastream.es-sodastream .es-possibilities__title {
+        font-size: 36px;
+      }
+
+      #es-sodastream.es-sodastream .es-slider__subtitle {
+        font-size: 36px;
+      }
+
+      #es-sodastream.es-sodastream .es-kv__subtitle {
+        text-transform: uppercase;
+        line-height: 1.2;
+        font-size: 25px;
+      }
+
+      #es-sodastream.es-sodastream .es-kv__img {
+        max-width: 600px;
+        margin-right: 0;
+      }
+
+      #es-sodastream.es-sodastream .es-kv__packshot {
+        max-height: 600px;
+        height: auto;
+        margin-left: 0px;
+      }
+
+      #es-sodastream.es-sodastream .es-efficiency__title {
+        font-size: 36px;
+        max-width: 79%;
+      }
+
+      #es-sodastream.es-sodastream .es-efficiency__desc {
+        margin: 0;
+        padding-top: 20px;
+        margin-bottom: 40px;
+        text-align: center;
+      }
+
+      #es-sodastream.es-sodastream .es-efficiency__img {
+        max-width: 450px;
+        margin: 30px 0;
+        margin-top: 0;
+      }
+
+      #es-sodastream.es-sodastream .es-set__img {
+        max-width: 450px;
+      }
+
+      #es-sodastream.es-sodastream .es-set__group {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-around;
+        gap: 0;
+      }
+
+      #es-sodastream.es-sodastream .es-set__group-left,
+      #es-sodastream.es-sodastream .es-set__group-right {
+        max-width: 43%;
+      }
+
+      #es-sodastream.es-sodastream .es-steps__items {
+        flex-direction: row;
+        align-items: baseline;
+      }
+
+      #es-sodastream.es-sodastream .es-ctaInfo__title {
+        font-size: 35px;
+      }
+
+      #es-sodastream.es-sodastream .es-ctaInfo__main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #es-sodastream.es-sodastream .es-ctaInfo__line {
+        display: block;
+      }
+
+      #es-sodastream.es-sodastream .es-slider__title {
+        font-size: 36px;
+      }
+
+      #es-sodastream.es-sodastream .es-slider__title span {
+        font-size: 65px;
+      }
+
+      #es-sodastream.es-sodastream .es-slider__slide {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      #es-sodastream.es-sodastream .es-slider__content {
+        position: relative;
+      }
+
+      #es-sodastream.es-sodastream .es-slider__imgCtn {
+        display: block;
+        max-width: 355px;
+        padding: 40px;
+      }
+
+      #es-sodastream.es-sodastream .es-slider__img {
+        padding: 40px;
+        max-width: 320px;
+        margin: 20px;
+      }
+
+      #es-sodastream.es-sodastream .es-syroups__title {
+        font-size: 36px;
+      }
+
+      #es-sodastream.es-sodastream .es-slider .swiper-button-next,
+      #es-sodastream.es-sodastream .es-slider .swiper-container-rtl .swiper-button-prev {
+        right: 50px;
+        left: auto;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      #es-sodastream.es-sodastream .es-slider .swiper-button-prev,
+      #es-sodastream.es-sodastream .es-slider .swiper-container-rtl .swiper-button-next {
+        left: 50px;
+        right: auto;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      #es-sodastream.es-sodastream .es-slider .swiper-button-next,
+      #es-sodastream.es-sodastream .es-slider .swiper-button-prev {
+        width: 40px;
+      }
+
+      .swiper-button-prev {
+        height: 40px;
+        width: 40px;
+      }
+
+      .swiper-button-next {
+        height: 40px;
+        width: 40px;
+      }
+    }
+
+      #es-sodastream.es-sodastream .es-bez {
+         background-color: rgb(235, 230, 225);
+       }
+      #es-sodastream.es-sodastream .es-bez__title {
+        position: relative;
+        margin: 0 0 30px 0;
+        line-height: inherit;
+        color: inherit;
+        font-family: empik, 'Black', sans-serif;
+        padding: 15px 15px 0;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 20px;
+      }
+      #es-sodastream.es-sodastream .es-bez__wrapper-desktop {
+        display: none;
+      }
+      #es-sodastream.es-sodastream .es-bez__wrapper-desktop > div {
+        flex: 1;
+      }
+      #es-sodastream.es-sodastream .es-bez__wrapper-desktop > .es-bez__wrapper-desktop-sodastream-container {
+        position: relative;
+        flex: 1.5;
+      }
+      #es-sodastream.es-sodastream .es-bez__wrapper-desktop-sodastream-container-text:nth-child(1) {
+        top: 14%;
+        left: 15%;
+      }
+      #es-sodastream.es-sodastream .es-bez__wrapper-desktop-sodastream-container-text:nth-child(2) {
+        top: 29%;
+        left: 69%;
+      }
+      #es-sodastream.es-sodastream .es-bez__wrapper-desktop-sodastream-container-text:nth-child(3) {
+        top: 60%;
+        left: 8%;
+      }
+      #es-sodastream.es-sodastream .es-bez__wrapper-desktop-sodastream-container-text {
+        position: absolute;
+        font-family: empik, 'Black', sans-serif;
+      }
+      #es-sodastream.es-sodastream .es-bez__wrapper-desktop-sodastream-container-img {
+        max-width: 100%;
+        display: block;
+        margin: 0 auto;
+      }
+      #es-sodastream.es-sodastream .es-bez__wrapper-desktop-sodastream-container-text--small {
+        margin: 0;
+        font-size: 14px;
+      }
+      #es-sodastream.es-sodastream .es-bez__wrapper-desktop-sodastream-container-text--big {
+        margin: 0;
+        font-size: 22px;
+      }
+      #es-sodastream.es-sodastream .es-bez__wrapper-desktop-text-container-left,
+      #es-sodastream.es-sodastream .es-bez__wrapper-desktop-text-container-right {
+        display: none;
+        font-size: 16px;
+      }
+      #es-sodastream.es-sodastream .es-bez__wrapper-desktop-text-container-left > p {
+        text-align: right;
+      }
+      #es-sodastream.es-sodastream .es-bez__wrapper-desktop-text-container-left > p:nth-child(1) {
+        padding-left: 39px;
+        margin-right: -13%;
+      }
+      #es-sodastream.es-sodastream .es-bez__wrapper-desktop-text-container-left > p:nth-child(2) {
+        padding-left: 22px;
+        margin-top: 8%;
+        margin-right: 2%;
+      }
+      #es-sodastream.es-sodastream .es-bez__wrapper-desktop-text-container-right > p {
+        padding-right: 22px;
+        margin-top: 20%;
+        margin-left: 2%;
+        text-align: left;
+      }
+      #es-sodastream.es-sodastream .es-bez__text {
+        text-align: center;
+        font-size: 16px;
+        margin: 0;
+        padding: 20px 36.094px;
+      }
+      @media screen and (min-width: 350px) {
+        #es-sodastream.es-sodastream .es-bez__wrapper-desktop-sodastream-container-text--small {
+          margin: 0;
+          font-size: 18px;
+        }
+        #es-sodastream.es-sodastream .es-bez__wrapper-desktop-sodastream-container-text--big {
+          margin: 0;
+          font-size: 26px;
+        }
+        #es-sodastream.es-sodastream .es-efficiency__img {
+          max-width: 350px;
+        }
+      }
+      @media screen and (max-width: 350px) {
+        #es-sodastream.es-sodastream p.es-video__hash {
+          font-size: 28px;
+        }
+      }
+      @media screen and (min-width: 550px) {
+        #es-sodastream.es-sodastream .es-bez__wrapper-desktop-sodastream-container-text--small {
+          font-weight: 500;
+          font-family: empik, 'Bold', sans-serif;
+          font-size: 18px;
+        }
+        #es-sodastream.es-sodastream .es-bez__wrapper-desktop-sodastream-container-text--big {
+          font-family: empik, 'Black', sans-serif;
+          font-size: 48px;
+        }
+        #es-sodastream.es-sodastream .es-bez__wrapper-desktop-sodastream-container-text:nth-child(1) {
+          top: 50%;
+          left: 50%;
+          transform: translate(-200%, -245%);
+        }
+        #es-sodastream.es-sodastream .es-bez__wrapper-desktop-sodastream-container-text:nth-child(2) {
+          top: 50%;
+          left: 50%;
+          transform: translate(135%, -140%);
+        }
+        #es-sodastream.es-sodastream .es-bez__wrapper-desktop-sodastream-container-text:nth-child(3) {
+          top: 50%;
+          left: 50%;
+          transform: translate(-207%, 143%);
+        }
+      }
+
+      #es-sodastream.es-sodastream .es-bez__wrapper-mobile-sodastream-container {
+        display: flex;
+        flex-direction: column;
+        padding: 0 5%;
+      }
+
+      #es-sodastream.es-sodastream .es-bez__wrapper-mobile-sodastream-container > * {
+        flex: 1;
+      }
+
+      #es-sodastream.es-sodastream .es-bez__wrapper-mobile-sodastream-container-image-wrapper {
+        display: flex;
+        justify-content: center;
+        flex: 0.1;
+      }
+      #es-sodastream.es-sodastream .es-bez__wrapper-mobile-sodastream-container-text-wrapper {
+        margin-top: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+      }
+      #es-sodastream.es-sodastream .es-bez__wrapper-mobile-sodastream-container-text--big {
+        font-weight: 600;
+        font-size: 22px
+      }
+      #es-sodastream.es-sodastream .es-bez__wrapper-mobile-sodastream-container-text--small {
+        font-size: 16px;
+      }
+
+      @media screen and (min-width: 768px) {
+        #es-sodastream.es-sodastream .es-bez__title {
+          font-family: empik, 'Black', sans-serif;
+          font-weight: 900;
+          font-size: 20px;
+        }
+        #es-sodastream.es-sodastream .es-bez__wrapper-mobile-sodastream-container-text-wrapper {
+          padding-left: 5%;
+        }
+      }
+
+      @media screen and (min-width: 1010px) {
+        #es-sodastream.es-sodastream .es-bez__wrapper-mobile-sodastream-container-text-wrapper {
+          padding-left: 5%;
+        }
+        #es-sodastream.es-sodastream .es-bez__wrapper-mobile-sodastream-container-text--big {
+          font-size: 22px;
+        }
+        #es-sodastream.es-sodastream .es-bez__wrapper-mobile-sodastream-container-text--small {
+          font-size: 20px;
+        }
+      }
+
+      @media screen and (min-width: 1365px) {
+        #es-sodastream.es-sodastream .es-bez__wrapper-mobile {
+          display: none;
+        }
+
+        #es-sodastream.es-sodastream .es-bez__wrapper-desktop {
+          display: flex;
+        }
+
+        #es-sodastream.es-sodastream .es-bez__wrapper-desktop-text-container-left,
+        #es-sodastream.es-sodastream .es-bez__wrapper-desktop-text-container-right {
+          display: block;
+        }
+        #es-sodastream.es-sodastream .es-bez__wrapper-desktop-sodastream-container-text:nth-child(1) {
+          transform: unset;
+          top: 11%;
+          left: 18%;
+        }
+        #es-sodastream.es-sodastream .es-bez__wrapper-desktop-sodastream-container-text:nth-child(2) {
+          transform: unset;
+          top: 27%;
+          left: 74%;
+        }
+        #es-sodastream.es-sodastream .es-bez__wrapper-desktop-sodastream-container-text:nth-child(3) {
+          transform: unset;
+          top: 64%;
+          left: 5%;
+        }
+
+
+        @media (min-width: 1250px) {
+          #es-sodastream.es-sodastream .es-slider__single {
+            min-width: 190px;
+            max-width: 200px;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            text-align: center;
+          }
+
+          #es-sodastream.es-sodastream .es-slider__icon {
+            width: auto;
+          }
+
+          #es-sodastream.es-sodastream .es-slider__desc {
+            color: #13294b !important;
+            font-size: 18px;
+          }
+
+          #es-sodastream.es-sodastream .es-slider__number {
+            font-family: empik, 'Black', sans-serif;
+            font-weight: 900;
+            color: #13294b !important;
+            font-size: 55px;
+            margin-bottom: 0;
+            margin-top: 0;
+          }
+
+          #es-sodastream.es-sodastream .es-slider__texts {
+            padding: 40px;
+          }
+
+          #es-sodastream.es-sodastream .es-slider__text {
+            font-size: 18px;
+          }
+        }
+
+        @media (min-width: 1250px) {
+          #es-sodastream.es-sodastream .es-kv {
+            background-color: #ebe6e1;
+            /* background-image: url(./img/kv-bg.png); */
+            background-repeat: no-repeat;
+            padding: 20px;
+            margin-bottom: 0;
+            padding-bottom: 0;
+          }
+
+          #es-sodastream.es-sodastream .es-kv__container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+          }
+
+          #es-sodastream.es-sodastream .es-kv__content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+          }
+
+          #es-sodastream.es-sodastream .es-kv__bg {
+            /* display: none; */
+            position: absolute;
+            top: 17%;
+            left: 8%;
+            font-size: 207px;
+            color: #e5dcd3 !important;
+          }
+
+          #es-sodastream.es-sodastream .es-kv__title {
+            text-transform: uppercase;
+            font-family: empik, 'Black', sans-serif;
+            font-weight: 900;
+            font-size: 36px;
+            line-height: 1.2;
+            margin-top: 0;
+            margin-bottom: 0;
+          }
+
+          #es-sodastream.es-sodastream .es-kv__img {
+            margin-right: 120px;
+          }
+
+          #es-sodastream.es-sodastream .es-possibilities {
+            margin-top: -150px;
+            background-position: 50% 200px;
+            background-size: contain;
+          }
+
+      #es-sodastream.es-sodastream .es-possibilities__title {
+        margin-top: 150px;
+        font-size: 36px;
+      }
+
+      #es-sodastream.es-sodastream .es-slider__subtitle {
+        font-size: 36px;
+      }
+
+      #es-sodastream.es-sodastream .es-kv__subtitle {
+        text-transform: uppercase;
+        line-height: 1.2;
+        font-size: 30px;
+      }
+
+      #es-sodastream.es-sodastream .es-kv__img {
+        max-width: 600px;
+      }
+
+      #es-sodastream.es-sodastream .es-kv__packshot {
+        max-height: none;
+        height: auto;
+        margin-left: -0px;
+      }
+
+      #es-sodastream.es-sodastream .es-kv__logo {
+        margin-left: 50px;
+      }
+
+      #es-sodastream.es-sodastream .es-set__title {
+        font-size: 36px;
+      }
+
+      #es-sodastream.es-sodastream .es-ctaInfo__title {
+        font-size: 35px;
+      }
+
+      #es-sodastream.es-sodastream .es-ctaInfo__main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #es-sodastream.es-sodastream .es-steps__items {
+        flex-direction: row;
+      }
+
+      #es-sodastream.es-sodastream .es-ctaInfo__line {
+        display: block;
+      }
+
+      #es-sodastream.es-sodastream .es-set__img {
+        margin-top: -200px;
+      }
+
+      #es-sodastream.es-sodastream .es-slider__title {
+        padding-bottom: 70px;
+        font-size: 36px;
+      }
+
+      #es-sodastream.es-sodastream .es-slider__title span {
+        font-size: 36px;
+      }
+
+      #es-sodastream.es-sodastream .es-slider__slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #es-sodastream.es-sodastream .es-slider__content {
+        position: relative;
+      }
+
+      #es-sodastream.es-sodastream .es-slider__imgCtn {
+        display: block;
+        max-width: 400px;
+      }
+
+      #es-sodastream.es-sodastream .es-slider__texts {
+        padding: 10px 40px;
+        width: 78%;
+      }
+
+      #es-sodastream.es-sodastream .es-slider__text {
+        max-width: 100%;
+        margin: 0 auto;
+        font-size: 16px;
+      }
+
+      #es-sodastream.es-sodastream .es-dis__text {
+        width: 86%;
+      }
+
+      #es-sodastream.es-sodastream .es-syroups__title {
+        font-size: 36px;
+      }
+
+      #es-sodastream.es-sodastream .es-slider .swiper-button-next,
+      #es-sodastream.es-sodastream .es-slider .swiper-container-rtl .swiper-button-prev {
+        right: 50px;
+        left: auto;
+      }
+
+      #es-sodastream.es-sodastream .es-slider .swiper-button-prev,
+      #es-sodastream.es-sodastream .es-slider .swiper-container-rtl .swiper-button-next {
+        left: 50px;
+        right: auto;
+      }
+
+      #es-sodastream.es-sodastream .es-slider .swiper-button-next,
+      #es-sodastream.es-sodastream .es-slider .swiper-button-prev {
+        width: 40px;
+      }
+
+      .swiper-button-prev {
+        height: 40px;
+        width: 40px;
+      }
+
+      .swiper-button-next {
+        height: 40px;
+        width: 40px;
+      }
+
+      #es-sodastream.es-sodastream .es-video__hash {
+        text-align: center;
+        font-family: empik, 'Regular', sans-serif;
+        font-weight: 900;
+        font-size: 45px;
+      }
+
+      #es-sodastream.es-sodastream .es-video__title {
+        font-size: 36px;
+      }
+    }
+
+    @media screen and (min-width: 1250px) {
+      #es-sodastream.es-sodastream .es-kv__packshot {
+        max-height: 400px;
+        z-index: 1;
+        position: relative;
+      }
+
+      #es-sodastream.es-sodastream .es-kv__img {
+        margin-right: 0;
+      }
+    }
+
+    @media screen and (min-width: 1400px) {
+      #es-sodastream.es-sodastream .es-kv__packshot {
+        max-height: none;
+      }
+
+      #es-sodastream.es-sodastream .es-kv__img {
+        margin-right: 80px;
+      }
+
+      #es-sodastream.es-sodastream .es-slider__ctn {
+        max-width: none;
+      }
+    }
+
+    /*# sourceMappingURL=style.css.map */
+  </style>
+</head>
+
+<body>
+  <div class="es-sodastream" id="es-sodastream">
+    <div class="es-kv">
+      <img src="./img/sodastream-logo.png" alt="" class="es-kv__logo"
+        loading="lazy">
+      <p class="es-kv__bg">Syrop</p>
+      <div class="es-kv__container">
+        <div class="es-kv__img">
+          <img class="es-kv__packshot" src="./img/kv-packshot.png"
+            alt="Butelka syropu Sodastream o smaku Kwiatu Czarnego Bzu" loading="lazy">
+        </div>
+      </div>
+      <div class="es-kv__content">
+        <div class="es-kv__contentText">
+          <p class="es-kv__title">
+            SODASTREAM
+            <br>
+            SYROP POMARAŃCZA Z MANGO, 440&nbsp;ml
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="es-dis">
+      <p class="es-dis__text">
+        Co powiesz na tropikalne połączenie orzeźwiającej i kwaśnej pomarańczy
+        przełamanej słodyczą mango? Ten egzotyczny smak, aromat i zapach
+        przeniosą wszystkie Twoje zmysły na plażę i pozwolą Ci się zrelaksować w
+        promieniach Słońca. Z syropami SodaStream zmieniaj wodę gazowaną w
+        ulubiony napój, który pozytywnie nastawi Cię do otaczającego świata.
+      </p>
+    </div>
+    <div class="es-possibilities">
+      <p class="es-possibilities__title">
+        jedna sodastream - wiele&nbsp;możliwości
+      </p>
+    </div>
+    <div class="es-efficiency">
+      <p class="es-efficiency__title">SMAK LATA GOTOWY W KILKA SEKUND</p>
+      <p class="es-efficiency__desc">
+        Wlej syrop SodaStream Pomarańcza z Mango do wody nagazowanej przy pomocy
+        saturatora SodaStream, wymieszaj i ciesz się ulubionym napojem bez
+        wychodzenia z domu! Możesz uzyskać dowolną intensywność smaku, dodając
+        wodę i syrop w odpowiednich dla siebie proporcjach. Odkrywaj nowe
+        możliwości kreowania koktajli, jakie stwarza syrop SodaStream Pomarańcza
+        z Mango.
+      </p>
+      <img class="es-efficiency__img" src="./img/img-eff.png" alt="Biały saturator Sodastream Art, butelka syropu o smaku Kwiatu Czarnego Bzu oraz szklanka z gotowym napojem na kuchennym blacie."
+        loading="lazy">
+    </div>
+    <div class="es-steps">
+      <div class="es-steps__items">
+        <div class="es-steps__single">
+          <img class="es-steps__img" src="./img/step-1.png" alt=""
+            loading="lazy">
+          <p class="es-steps__title">gazuj</p>
+        </div>
+        <div class="es-steps__single">
+          <img class="es-steps__img es-steps__img--2" src="./img/step-2.png"
+            alt="Krok 2 - Ulubiony syrop do wody gazowanej" loading="lazy">
+          <p class="es-steps__title es-steps__title--2">miksuj</p>
+        </div>
+        <div class="es-steps__single">
+          <img class="es-steps__img" src="./img/step-3.png" alt="Krok 3 - Ciesz się smakiem pysznych napojów"
+            loading="lazy">
+          <p class="es-steps__title">smakuj</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="es-bez">
+      <h2 class="es-bez__title">
+        Pomarańcza Mango – orzeźwienie<br>
+        z dodatkiem witamin*
+      </h2>
+
+      <div class="es-bez__wrapper-desktop">
+        <div class="es-bez__wrapper-desktop-text-container-left">
+          <p>
+            Odczuwasz znużenie? Czas na orzeźwiający impuls do działania! Syrop SodaStream o smaku Pomarańcza Mango zawiera niacynę, czyli witaminę B3, która pomaga zmniejszyć uczucie zmęczenia.
+          </p>
+          <p>
+            Wspieraj swój organizm
+            na co dzień. Cynk pomaga
+            w prawidłowym funkcjonowaniu układu odpornościowego – teraz znajdziesz go także w Twoim ulubionym napoju
+            SodaStream.
+          </p>
+        </div>
+
+        <div class="es-bez__wrapper-desktop-sodastream-container">
+          <div class="es-bez__wrapper-desktop-sodastream-container-text">
+            <p class="es-bez__wrapper-desktop-sodastream-container-text--small">witamina</p>
+            <p class="es-bez__wrapper-desktop-sodastream-container-text--big">B3</p>
+          </div>
+          <div class="es-bez__wrapper-desktop-sodastream-container-text">
+            <p class="es-bez__wrapper-desktop-sodastream-container-text--small">witamina</p>
+            <p class="es-bez__wrapper-desktop-sodastream-container-text--big">B6</p>
+          </div>
+          <div class="es-bez__wrapper-desktop-sodastream-container-text">
+            <p class="es-bez__wrapper-desktop-sodastream-container-text--big">cynk</p>
+          </div>
+          <img src="./img/bez-desktop.png" alt="Butelka syropu Sodastream Pomarańcza Mango, którego skład wzbogacono o witaminy i mikroelementy." loading="lazy" class="es-bez__wrapper-desktop-sodastream-container-img">
+        </div>
+
+        <div class="es-bez__wrapper-desktop-text-container-right">
+          <p>
+            Syrop SodaStream o smaku Pomarańcza Mango to pyszny smak i coś ekstra dla Ciebie. Został wzbogacony o witaminę B6,
+            która wspiera prawidłowe funkcjonowanie układu nerwowego i odpornościowego.
+          </p>
+        </div>
+      </div>
+
+      <div class="es-bez__wrapper-mobile">
+        <div class="es-bez__wrapper-mobile-sodastream-container">
+          <div class="es-bez__wrapper-mobile-sodastream-container-image-wrapper">
+            <img src="./img/bez-mobile.png" alt="Butelka syropu Sodastream Pomarańcza Mango, wzbogaconego witaminami i mikroelementami." loading="lazy" class="es-bez__wrapper-mobile-sodastream-container-img">
+          </div>
+          <div class="es-bez__wrapper-mobile-sodastream-container-text-wrapper">
+            <div class="es-bez__wrapper-mobile-sodastream-container-text">
+              <p class="es-bez__wrapper-mobile-sodastream-container-text--big">witamina B3</p>
+              <p class="es-bez__wrapper-mobile-sodastream-container-text--small">
+                Odczuwasz znużenie? Czas na orzeźwiający impuls do działania! Syrop SodaStream o smaku Pomarańcza Mango zawiera niacynę, czyli witaminę B3, która pomaga zmniejszyć uczucie zmęczenia.
+              </p>
+            </div>
+            <div class="es-bez__wrapper-mobile-sodastream-container-text">
+              <p class="es-bez__wrapper-mobile-sodastream-container-text--big">witamina B6</p>
+              <p class="es-bez__wrapper-mobile-sodastream-container-text--small">
+                Syrop SodaStream o smaku Pomarańcza Mango to pyszny smak i coś ekstra dla Ciebie. Został wzbogacony o witaminę B6,
+                która wspiera prawidłowe funkcjonowanie układu nerwowego i odpornościowego.
+              </p>
+            </div>
+            <div class="es-bez__wrapper-mobile-sodastream-container-text">
+              <p class="es-bez__wrapper-mobile-sodastream-container-text--big">cynk</p>
+              <p class="es-bez__wrapper-mobile-sodastream-container-text--small">
+                Wspieraj swój organizm
+                na co dzień. Cynk pomaga
+                w prawidłowym funkcjonowaniu układu odpornościowego – teraz znajdziesz go także w Twoim ulubionym napoju
+                SodaStream.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="es-bez__text">*Witaminy i minerały zawarte w produkcie wspierają prawidłowe funkcjonowanie organizmu. Nie zastępują
+        jednak zróżnicowanej diety ani zdrowego trybu życia, które są podstawą dobrego zdrowia.</p>
+    </div>
+
+    <div class="es-slider">
+      <div class="es-sliderCtn">
+        <div class="es-slider__wrapper">
+          <div class="es-slider__content">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="es-slider__slide">
+                    <div class="es-slider__texts">
+                      <p class="es-slider__subtitle">
+                        BĄDŹ EKO, PRZYGOTUJ BĄBELKI W SWOJEJ KUCHNI
+                      </p>
+                      <p class="es-slider__text">
+                        Jedna mała buteleczka koncentratu smakowego SodaStream
+                        Pomarańcza z Mango to ok. 9 litrów domowego napoju z
+                        bąbelkami! Zapomnij o oranżadach i napojach gazowanych
+                        ze sklepowych półek, a także o wyrzucaniu plastikowych
+                        butelek. Wybierając SodaStream bez wysiłku możesz być
+                        eko. Ten prosty wybór to gwarancja wyśmienitego smaku i
+                        Twój ukłon w stronę Matki Natury.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="es-slider__slide">
+                    <div class="es-slider__ctn">
+                      <div class="es-slider__single">
+                        <p class="es-slider__number">1</p>
+                        <div class="es-slider__icon">
+                          <img src="./img/icon-4.png" alt="" aria-hidden="true" loading="lazy">
+                        </div>
+                        <p class="es-slider__desc">
+                          <span>Wlej zimną wodę.</span>
+                        </p>
+                      </div>
+
+                      <div class="es-slider__single">
+                        <p class="es-slider__number">2</p>
+                        <div class="es-slider__icon">
+                          <img src="./img/icon-5.png" alt="" aria-hidden="true" loading="lazy">
+                        </div>
+                        <p class="es-slider__desc">
+                          <span>
+                            Zabąbelkuj w ekspresie.
+                            <br>
+                          </span>
+                        </p>
+                      </div>
+
+                      <div class="es-slider__single">
+                        <p class="es-slider__number">3</p>
+                        <div class="es-slider__icon">
+                          <img src="./img/icon-6.png" alt="" aria-hidden="true" loading="lazy">
+                        </div>
+                        <p class="es-slider__desc">
+                          <span>Dodaj syrop.</span>
+                        </p>
+                      </div>
+
+                      <div class="es-slider__single">
+                        <p class="es-slider__number">4</p>
+                        <div class="es-slider__icon">
+                          <img src="./img/icon-7.png" alt="" aria-hidden="true" loading="lazy">
+                        </div>
+                        <p class="es-slider__desc">
+                          <span>
+                            Ciesz się
+                            <br>
+                            orzeźwiającym
+                            <br>
+                            napojem.
+                          </span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+      <p class="es-slider__title">CZARUJ SMAKIEM Z SODASTREAM</p>
+    </div>
+
+    <div class="es-set">
+      <img class="es-set__img" src="./img/set-img.png" alt="Szklanka z napojem o smaku Kwiatu Czarnego Bzu" loading="lazy">
+      <p class="es-set__desc">
+        Chcesz nieco urozmaicić napoje na bazie syropu SodaStream Pomarańcza z
+        Mango? Sprawdź nasze propozycje!
+      </p>
+      <div class="es-set__group">
+        <div class="es-set__group-left">
+          <div class="es-set__group-left-list">
+            <p class="es-set__group-left-title">1. SŁODKA MIMOZA</p>
+            Składniki na 1 drink:
+            <br>
+            • 120 ml napoju gazowanego przygotowanego na
+            <br>
+            bazie syropu SodaStream Pomarańcza z Mango
+            <br>
+            • 120 ml szampana bezalkoholowego
+            <br>
+            • kostki lodu
+            <br>
+            <br>
+
+            Do wysokiej szklanki wlej napój na bazie syropu SodaStream
+            Pomarańcza z Mango i uzupełnij szampanem bezalkoholowym. W upalne
+            dni dla dodatkowej ochłody dorzuć kilka kostek lodu. Słodka Mimoza
+            to doskonały drink do wznoszenia toastów na imprezach urodzinowych!
+          </div>
+        </div>
+        <div class="es-set__group-right">
+          <div class="es-set__group-right-list">
+            <p class="es-set__group-right-title">2. POMARAŃCZA MANGO DRINK</p>
+            Składniki na 1 drink:
+            <br>
+            • 220 ml napoju gazowanego na bazie syropu
+            <br>
+            SodaStream Pomarańcza z Mango
+            <br>
+            • kilka plasterków ulubionych cytrusów
+            <br>
+            • lód
+            <br>
+            • gałązka mięty lub rozmarynu
+            <br>
+            <br>
+            Do szklanki wrzuć lód i wlej napój gazowany na bazie SodaStream
+            Pomarańcza z Mango. Dorzuć plasterki ulubionych owoców. Udekoruj
+            drink gałązką mięty lub rozmarynu.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="es-syroups">
+      <p class="es-syroups__title">JEDNA SODASTREAM - WIELE&nbsp;MOŻLIWOŚCI</p>
+      <p class="es-syroups__desc">
+        Kolekcja syropów SodaStream pozwoli każdemu przygotować we własnym domu
+        ulubiony napój gazowany. Seria klasycznych syropów, takich jak 7Up,
+        Pepsi i Mirinda przeznaczona jest dla wielbicieli kultowych smaków.
+        Osobom dbającym o sylwetkę proponujemy warianty bez dodatku cukru, zaś
+        miłośnikom subtelnych smaków do gustu przypadnie syrop o smaku Kwiatu
+        Czarnego Bzu. Sprawdź wszystkie smaki SodaStream!
+      </p>
+      <div class="es-syroups__imgCtn">
+        <img class="es-syroups__pack" src="./img/sodastream-syroups.png" alt="Pełna gama syropów Sodastream, między innymi Pepsi, Lipton Ice Tea, Mountain Dew i różnorodne smaki owocowe."
+          loading="lazy">
+      </div>
+    </div>
+
+    <div class="es-video">
+      <p class="es-video__title">SPRAWDŹ NASZ PRZEPIS NA&nbsp;ORZEŹWIENIE</p>
+      <iframe class="es-video__iframe" width="100%" height="auto"
+        src="https://www.youtube.com/embed/JJeQbQmPSbM" frameborder="0"
+        allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+      <p class="es-video__hash">#PushForBetter</p>
+      <img class="es-video__logo" src="./img/sodastream-logo.png" alt="Sodastream"
+        loading="lazy">
+    </div>
+  </div>
+</body>
